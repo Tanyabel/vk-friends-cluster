@@ -25,7 +25,7 @@ $(document).ready(function() {
 
   var hideProgress = function(){
     $('.progress').hide();
-  }
+  };
 
   $('#login').click(function() {
     var link = 'https://oauth.vk.com/authorize?client_id=' + $('#clientId').val() + '&scope=friends,offline&redirect_uri=https://oauth.vk.com/blank.html&display=page&v=5.50&response_type=token';
@@ -78,22 +78,10 @@ $(document).ready(function() {
     }
 
     showProgress();
-    var users = $.map(friends, function(friend) { return { id: friend.uid, neighbors: friend.friends} });    
-    var communities = Algorithms.findCommunity(users);
-    var groups = {name: "Пользователь", size: communities.length, children: []};
-    $.each(communities, function(index, community) {
-      var group = { name: community.length, size: community.length };
-      group.children = $.map(community, function(id) {
-        var user = friends.find(function(element, index, array) { return element.uid == id; });
-        user.name = (user.last_name || '' ) + ' ' + (user.first_name || '');
-        user.size = 100;
-        user.img = user.photo_200_orig;
-        return user;
-      });
-      groups.children.push(group);
-    });     
+     var delta = parseFloat($('#delta').val());
+     var groups = Algorithms.oldAlgorithm(friends, delta);
+     showCirclePacking(groups);
 
-    showCirclePacking(groups);
     $('.progress').hide();
   });
 
