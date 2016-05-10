@@ -1,0 +1,73 @@
+.alert {
+  display: none;
+  margin: 0 0 18px 0;
+  border-radius: 4px;
+  font-size: 96.5%;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.alert-success {
+  color: #217623;
+  background: #e9f4e5;
+  border: solid 1px #aecc96;
+}
+
+.alert-success span {
+    color: #217623;
+}
+
+.alert-error {
+  color: #b94a48;
+  background: #f2dede;
+  border: solid 1px #ebccd1;
+}
+
+.alert-error span {
+  color: #b94a48;
+}
+
+circle {
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf {
+  z-index: 0;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+text {
+  font: 10px sans-serif;
+}
+
+body{
+  margin: 15px;
+}
+
+.progress {
+  display: none;
+}
+
+.brand-logo{
+  margin-right: 15px;
+}
+
+.hide{
+  display: none;
+}
+
+path.link {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.node:not(:hover) .nodetext {
+  display: none;
+}

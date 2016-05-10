@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="js\lib\jquery.js"></script>
+<script src="js\lib\materialize.js"></script>
+<script type="text/javascript" src="js\lib\underscore.js"></script>
+<script type="text/javascript" src="js\lib\d3.v3.js" charset="utf-8"></script>
+<script type="text/javascript" src="js\vkFriends.js"></script>
+<script type="text/javascript" src="js\graph.js"></script>
+<script type="text/javascript" src="js\algorithms.js"></script>
+<script type="text/javascript" src="js\main.js"></script>
+<link rel="stylesheet" href="css\materialize.css">
+<link rel="stylesheet" href="css\style.css">
+<body>
+  <div class="progress">
+      <div class="indeterminate"></div>
+  </div>
+  <div class="row alert alert-success"><span></span></div>
+  <div class="row alert alert-error"><span></span></div>
+  <div class="row">
+    <input class="col s2 m1" id="clientId" placeholder="Client Id">
+    <a class="col s2 m1 waves-effect waves-light btn" id="login" href="">Login</a>
+    <input class="col s4 m2" id="token" placeholder="access token">
+    <a id="findFriends" class="col s2 m2 waves-effect waves-light btn">Определить друзей</a>
+    <a id="getRelations" class="col s2 m2 waves-effect waves-light btn">Определеть связи</a>
+  </div>
+  <div id="graphs">
+    <div id="circlePacking"></div>
+    <div id="forceLayout" class="hide"></div>
+  </div>
+</body>
